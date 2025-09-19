@@ -1,0 +1,15 @@
+material qr_code_zone1Haie-Vive/qr_code_zone1Haie-Vive
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture zone1Haie-Vive.png
+                filtering none
+                scale 1.0 1.0
+            }
+        }
+    }
+}

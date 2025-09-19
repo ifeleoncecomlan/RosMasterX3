@@ -1,0 +1,15 @@
+material qr_code_zone3Arkadia/qr_code_zone3Arkadia
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture zone3Arkadia.png
+                filtering none
+                scale 1.0 1.0
+            }
+        }
+    }
+}
