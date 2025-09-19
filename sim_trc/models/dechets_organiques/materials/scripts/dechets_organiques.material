@@ -1,0 +1,13 @@
+material dechets_organiques/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dechets_organiques.jpg
+      }
+    }
+  }
+}
