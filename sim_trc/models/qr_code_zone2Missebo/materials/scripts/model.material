@@ -1,0 +1,15 @@
+material qr_code_zone2Missebo/qr_code_zone2Missebo
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture zone2Missebo.png
+                filtering none
+                scale 1.0 1.0
+            }
+        }
+    }
+}

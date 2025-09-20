@@ -39,7 +39,7 @@ def generate_launch_description():
     world_file = PathJoinSubstitution(
         [FindPackageShare("sim_trc"),
         "worlds",
-        "trc_arena.world"],
+        "trc2k25_arena.world"],
     )
 
     gazebo_sim = ExecuteProcess(
