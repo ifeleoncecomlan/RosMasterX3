@@ -1,0 +1,13 @@
+material menagers_industrielle_carton_ondule_grand/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_industrielle_carton_ondule_grand.jpg
+      }
+    }
+  }
+}

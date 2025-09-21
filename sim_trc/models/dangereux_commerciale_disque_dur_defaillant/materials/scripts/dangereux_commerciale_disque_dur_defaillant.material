@@ -1,0 +1,13 @@
+material dangereux_commerciale_disque_dur_defaillant/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_commerciale_disque_dur_defaillant.jpg
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+material menagers_commerciale_pot_sauce/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_commerciale_pot_sauce.jpg
+      }
+    }
+  }
+}

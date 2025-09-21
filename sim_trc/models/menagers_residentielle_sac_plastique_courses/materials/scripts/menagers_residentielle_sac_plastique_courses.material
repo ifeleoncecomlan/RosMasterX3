@@ -1,0 +1,13 @@
+material menagers_residentielle_sac_plastique_courses/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_residentielle_sac_plastique_courses.jpg
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+material menagers_industrielle_palette_bois_cassee/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_industrielle_palette_bois_cassee.jpg
+      }
+    }
+  }
+}

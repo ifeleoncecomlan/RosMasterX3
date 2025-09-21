@@ -1,0 +1,13 @@
+material dangereux_industrielle_dechet_pharmaceutique/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_industrielle_dechet_pharmaceutique.jpg
+      }
+    }
+  }
+}

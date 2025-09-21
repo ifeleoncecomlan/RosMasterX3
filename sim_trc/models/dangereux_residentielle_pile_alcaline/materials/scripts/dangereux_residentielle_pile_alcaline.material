@@ -1,0 +1,13 @@
+material dangereux_residentielle_pile_alcaline/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_residentielle_pile_alcaline.jpg
+      }
+    }
+  }
+}

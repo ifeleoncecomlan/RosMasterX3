@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="recyclables_industrielle_plastique_PE_film">
+    <static>true</static>
+    <link name="link">
+      <visual name="cube_visual">
+        <geometry>
+          <box>
+            <size>0.03 0.03 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://recyclables_industrielle_plastique_PE_film/materials/scripts/</uri>
+            <uri>model://recyclables_industrielle_plastique_PE_film/materials/textures/</uri>
+            <name>recyclables_industrielle_plastique_PE_film/FaceMaterial</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.03 0.03 0.03</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

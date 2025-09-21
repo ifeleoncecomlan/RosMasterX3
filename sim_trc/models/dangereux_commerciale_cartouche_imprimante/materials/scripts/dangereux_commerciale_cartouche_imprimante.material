@@ -1,0 +1,13 @@
+material dangereux_commerciale_cartouche_imprimante/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_commerciale_cartouche_imprimante.jpg
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+material dangereux_residentielle_medicament_expire/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_residentielle_medicament_expire.jpg
+      }
+    }
+  }
+}

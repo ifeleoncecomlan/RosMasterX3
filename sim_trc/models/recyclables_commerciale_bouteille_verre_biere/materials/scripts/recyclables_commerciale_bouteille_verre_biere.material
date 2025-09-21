@@ -1,0 +1,13 @@
+material recyclables_commerciale_bouteille_verre_biere/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_commerciale_bouteille_verre_biere.jpg
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+material recyclables_commerciale_carton_pizza_propre/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_commerciale_carton_pizza_propre.jpg
+      }
+    }
+  }
+}

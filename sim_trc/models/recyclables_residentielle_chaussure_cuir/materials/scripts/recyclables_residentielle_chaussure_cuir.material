@@ -1,0 +1,13 @@
+material recyclables_residentielle_chaussure_cuir/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_residentielle_chaussure_cuir.jpg
+      }
+    }
+  }
+}

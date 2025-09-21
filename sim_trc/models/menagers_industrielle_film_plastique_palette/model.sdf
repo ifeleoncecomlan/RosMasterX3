@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="menagers_industrielle_film_plastique_palette">
+    <static>true</static>
+    <link name="link">
+      <visual name="cube_visual">
+        <geometry>
+          <box>
+            <size>0.03 0.03 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://menagers_industrielle_film_plastique_palette/materials/scripts/</uri>
+            <uri>model://menagers_industrielle_film_plastique_palette/materials/textures/</uri>
+            <name>menagers_industrielle_film_plastique_palette/FaceMaterial</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.03 0.03 0.03</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

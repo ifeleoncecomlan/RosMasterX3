@@ -1,0 +1,13 @@
+material recyclables_industrielle_ferraille_acier/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_industrielle_ferraille_acier.jpg
+      }
+    }
+  }
+}

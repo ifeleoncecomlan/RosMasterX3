@@ -1,0 +1,13 @@
+material recyclables_industrielle_metal_zinc/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_industrielle_metal_zinc.jpg
+      }
+    }
+  }
+}

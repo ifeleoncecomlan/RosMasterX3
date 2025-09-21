@@ -15,7 +15,7 @@ SDF_TEMPLATE = """<?xml version="1.0" ?>
       <visual name="cube_visual">
         <geometry>
           <box>
-            <size>0.3 0.3 0.3</size>
+            <size>0.03 0.03 0.03</size>
           </box>
         </geometry>
         <material>
@@ -29,7 +29,7 @@ SDF_TEMPLATE = """<?xml version="1.0" ?>
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.3 0.3 0.3</size>
+            <size>0.03 0.03 0.03</size>
           </box>
         </geometry>
       </collision>

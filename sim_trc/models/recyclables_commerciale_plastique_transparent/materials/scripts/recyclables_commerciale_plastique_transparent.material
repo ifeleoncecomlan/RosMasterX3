@@ -1,0 +1,13 @@
+material recyclables_commerciale_plastique_transparent/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_commerciale_plastique_transparent.jpg
+      }
+    }
+  }
+}

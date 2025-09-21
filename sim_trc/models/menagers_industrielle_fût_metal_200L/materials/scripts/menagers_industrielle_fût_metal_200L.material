@@ -1,0 +1,13 @@
+material menagers_industrielle_fût_metal_200L/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_industrielle_fût_metal_200L.jpg
+      }
+    }
+  }
+}

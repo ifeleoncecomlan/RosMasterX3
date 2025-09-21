@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="menagers_commerciale_sachet_sucre">
+    <static>true</static>
+    <link name="link">
+      <visual name="cube_visual">
+        <geometry>
+          <box>
+            <size>0.03 0.03 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://menagers_commerciale_sachet_sucre/materials/scripts/</uri>
+            <uri>model://menagers_commerciale_sachet_sucre/materials/textures/</uri>
+            <name>menagers_commerciale_sachet_sucre/FaceMaterial</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.03 0.03 0.03</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

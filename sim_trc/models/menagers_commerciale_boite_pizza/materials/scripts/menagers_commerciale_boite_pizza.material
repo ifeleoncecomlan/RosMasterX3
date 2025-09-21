@@ -1,0 +1,13 @@
+material menagers_commerciale_boite_pizza/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_commerciale_boite_pizza.jpg
+      }
+    }
+  }
+}

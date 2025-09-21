@@ -1,0 +1,13 @@
+material recyclables_residentielle_sac_tissu/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_residentielle_sac_tissu.jpg
+      }
+    }
+  }
+}

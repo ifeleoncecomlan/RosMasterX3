@@ -1,0 +1,13 @@
+material dangereux_commerciale_huile_hydraulique/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_commerciale_huile_hydraulique.jpg
+      }
+    }
+  }
+}

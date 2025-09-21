@@ -1,0 +1,13 @@
+material dangereux_industrielle_plomb_batterie_industriel/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_industrielle_plomb_batterie_industriel.jpg
+      }
+    }
+  }
+}
