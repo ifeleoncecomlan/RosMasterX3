@@ -10,7 +10,7 @@ import os
 
 ARGUMENTS = [
     DeclareLaunchArgument('x_init',
-            default_value='0.0',
+            default_value='0.25',
             description='robot initial x'),
     DeclareLaunchArgument('y_init',
             default_value='0.0',
@@ -19,7 +19,7 @@ ARGUMENTS = [
             default_value='1.5',
             description='robot initial z'),
     DeclareLaunchArgument('yaw_init',
-            default_value='0.0',
+            default_value='-1.57',
             description='robot initial yaw')
 ]
 
