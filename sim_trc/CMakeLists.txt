@@ -27,7 +27,7 @@ ament_package()
 
 install(
   DIRECTORY
-    launch src include worlds models
+    launch worlds models
   DESTINATION
     share/${PROJECT_NAME}
 )

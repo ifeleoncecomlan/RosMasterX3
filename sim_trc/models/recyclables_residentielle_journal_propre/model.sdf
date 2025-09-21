@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="recyclables_residentielle_journal_propre">
+    <static>true</static>
+    <link name="link">
+      <visual name="cube_visual">
+        <geometry>
+          <box>
+            <size>0.03 0.03 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://recyclables_residentielle_journal_propre/materials/scripts/</uri>
+            <uri>model://recyclables_residentielle_journal_propre/materials/textures/</uri>
+            <name>recyclables_residentielle_journal_propre/FaceMaterial</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.03 0.03 0.03</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,13 @@
+material menagers_industrielle_caisse_plastique/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_industrielle_caisse_plastique.jpg
+      }
+    }
+  }
+}

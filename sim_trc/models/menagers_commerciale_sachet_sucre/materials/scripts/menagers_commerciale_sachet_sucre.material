@@ -1,0 +1,13 @@
+material menagers_commerciale_sachet_sucre/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_commerciale_sachet_sucre.jpg
+      }
+    }
+  }
+}

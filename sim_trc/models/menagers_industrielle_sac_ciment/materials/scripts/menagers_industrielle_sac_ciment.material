@@ -1,0 +1,13 @@
+material menagers_industrielle_sac_ciment/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_industrielle_sac_ciment.jpg
+      }
+    }
+  }
+}

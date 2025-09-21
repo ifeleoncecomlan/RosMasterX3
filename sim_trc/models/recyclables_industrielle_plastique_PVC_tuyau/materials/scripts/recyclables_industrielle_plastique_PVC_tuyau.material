@@ -1,0 +1,13 @@
+material recyclables_industrielle_plastique_PVC_tuyau/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_industrielle_plastique_PVC_tuyau.jpg
+      }
+    }
+  }
+}

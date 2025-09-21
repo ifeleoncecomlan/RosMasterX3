@@ -1,0 +1,13 @@
+material recyclables_residentielle_bocal_verre_propre/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_residentielle_bocal_verre_propre.jpg
+      }
+    }
+  }
+}

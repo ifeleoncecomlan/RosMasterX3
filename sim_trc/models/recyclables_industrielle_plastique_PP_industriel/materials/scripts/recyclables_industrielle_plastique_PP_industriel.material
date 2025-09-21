@@ -1,0 +1,13 @@
+material recyclables_industrielle_plastique_PP_industriel/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_industrielle_plastique_PP_industriel.jpg
+      }
+    }
+  }
+}

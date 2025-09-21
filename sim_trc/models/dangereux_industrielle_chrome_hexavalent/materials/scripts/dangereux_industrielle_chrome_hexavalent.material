@@ -1,0 +1,13 @@
+material dangereux_industrielle_chrome_hexavalent/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_industrielle_chrome_hexavalent.jpg
+      }
+    }
+  }
+}

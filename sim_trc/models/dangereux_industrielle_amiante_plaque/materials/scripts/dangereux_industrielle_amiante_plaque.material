@@ -1,0 +1,13 @@
+material dangereux_industrielle_amiante_plaque/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_industrielle_amiante_plaque.jpg
+      }
+    }
+  }
+}

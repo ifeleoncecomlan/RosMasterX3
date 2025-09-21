@@ -1,0 +1,13 @@
+material menagers_commerciale_emballage_sandwich/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_commerciale_emballage_sandwich.jpg
+      }
+    }
+  }
+}

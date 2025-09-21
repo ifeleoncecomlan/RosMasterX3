@@ -1,0 +1,13 @@
+material menagers_industrielle_jerrycan_20L/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_industrielle_jerrycan_20L.jpg
+      }
+    }
+  }
+}

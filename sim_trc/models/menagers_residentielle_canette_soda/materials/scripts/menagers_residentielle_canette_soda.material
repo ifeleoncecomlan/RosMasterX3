@@ -1,0 +1,13 @@
+material menagers_residentielle_canette_soda/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_residentielle_canette_soda.jpg
+      }
+    }
+  }
+}

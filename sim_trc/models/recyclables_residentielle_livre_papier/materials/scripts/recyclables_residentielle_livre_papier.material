@@ -1,0 +1,13 @@
+material recyclables_residentielle_livre_papier/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_residentielle_livre_papier.jpg
+      }
+    }
+  }
+}

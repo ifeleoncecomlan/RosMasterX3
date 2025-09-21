@@ -1,0 +1,13 @@
+material dangereux_commerciale_batterie_ordinateur/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_commerciale_batterie_ordinateur.jpg
+      }
+    }
+  }
+}

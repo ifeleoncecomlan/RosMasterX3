@@ -1,0 +1,13 @@
+material menagers_industrielle_bidon_eau_5L/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_industrielle_bidon_eau_5L.jpg
+      }
+    }
+  }
+}

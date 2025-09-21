@@ -1,0 +1,13 @@
+material dangereux_industrielle_dechet_radioactif_faible/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_industrielle_dechet_radioactif_faible.jpg
+      }
+    }
+  }
+}

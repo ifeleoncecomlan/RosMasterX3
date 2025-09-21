@@ -1,0 +1,13 @@
+material menagers_industrielle_bidon_huile_moteur/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_industrielle_bidon_huile_moteur.jpg
+      }
+    }
+  }
+}

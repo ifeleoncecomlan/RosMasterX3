@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="dangereux_residentielle_ampoule_led_cassee">
+    <static>true</static>
+    <link name="link">
+      <visual name="cube_visual">
+        <geometry>
+          <box>
+            <size>0.03 0.03 0.03</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://dangereux_residentielle_ampoule_led_cassee/materials/scripts/</uri>
+            <uri>model://dangereux_residentielle_ampoule_led_cassee/materials/textures/</uri>
+            <name>dangereux_residentielle_ampoule_led_cassee/FaceMaterial</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.03 0.03 0.03</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

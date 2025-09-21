@@ -1,0 +1,13 @@
+material recyclables_commerciale_papier_bureau_blanc/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_commerciale_papier_bureau_blanc.jpg
+      }
+    }
+  }
+}

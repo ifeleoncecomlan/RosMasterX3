@@ -1,0 +1,13 @@
+material menagers_residentielle_barquette_viande/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_residentielle_barquette_viande.jpg
+      }
+    }
+  }
+}

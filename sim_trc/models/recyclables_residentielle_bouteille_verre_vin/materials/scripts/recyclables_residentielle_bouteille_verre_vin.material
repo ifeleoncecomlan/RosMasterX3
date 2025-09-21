@@ -1,0 +1,13 @@
+material recyclables_residentielle_bouteille_verre_vin/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture recyclables_residentielle_bouteille_verre_vin.jpg
+      }
+    }
+  }
+}

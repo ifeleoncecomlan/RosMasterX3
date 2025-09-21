@@ -1,0 +1,13 @@
+material menagers_residentielle_gobelet_cafe/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_residentielle_gobelet_cafe.jpg
+      }
+    }
+  }
+}

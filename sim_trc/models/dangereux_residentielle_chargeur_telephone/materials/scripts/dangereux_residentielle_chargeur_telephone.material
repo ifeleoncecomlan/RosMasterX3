@@ -1,0 +1,13 @@
+material dangereux_residentielle_chargeur_telephone/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture dangereux_residentielle_chargeur_telephone.jpg
+      }
+    }
+  }
+}

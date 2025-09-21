@@ -27,7 +27,7 @@ ament_package()
 
 install(
   DIRECTORY
-    meshes urdf src include launch config
+    meshes urdf launch config
   DESTINATION
     share/${PROJECT_NAME}
 )

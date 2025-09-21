@@ -1,0 +1,13 @@
+material menagers_commerciale_gobelet_distributeur/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_commerciale_gobelet_distributeur.jpg
+      }
+    }
+  }
+}

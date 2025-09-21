@@ -1,0 +1,13 @@
+material menagers_residentielle_bouteille_huile/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture menagers_residentielle_bouteille_huile.jpg
+      }
+    }
+  }
+}
