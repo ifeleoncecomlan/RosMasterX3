@@ -132,3 +132,6 @@ def main():
 	termios.tcsetattr(sys.stdin, termios.TCSADRAIN, yahboom_keyboard.settings)
 	yahboom_keyboard.destroy_node()
 	rclpy.shutdown()
+
+if __name__ == "__main__":
+    main()

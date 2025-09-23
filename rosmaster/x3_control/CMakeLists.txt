@@ -26,12 +26,14 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+ament_python_install_package(${PROJECT_NAME})
 
 install(PROGRAMS
-  ${PROJECT_NAME}/scripts/yahboom_joy_X3.py ${PROJECT_NAME}/scripts/yahboom_keyboard.py
+  ${PROJECT_NAME}/scripts/yahboom_joy_X3.py
+  ${PROJECT_NAME}/scripts/yahboom_keyboard.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
-ament_python_install_package(${PROJECT_NAME})
+
 
 ament_package()

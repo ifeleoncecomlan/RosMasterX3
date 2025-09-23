@@ -10,8 +10,20 @@ OUTPUT_DIR = os.path.expanduser("./models")
 SDF_TEMPLATE = """<?xml version="1.0" ?>
 <sdf version="1.6">
   <model name="{model_name}">
-    <static>true</static>
+    <static>false</static>
     <link name="link">
+      <inertial>
+        <mass>0.00893</mass>
+        <inertia>
+          <ixx>4.47e-6</ixx>
+          <iyy>4.47e-6</iyy>
+          <izz>4.47e-6</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+
       <visual name="cube_visual">
         <geometry>
           <box>
@@ -26,6 +38,7 @@ SDF_TEMPLATE = """<?xml version="1.0" ?>
           </script>
         </material>
       </visual>
+
       <collision name="collision">
         <geometry>
           <box>

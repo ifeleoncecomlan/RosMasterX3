@@ -154,4 +154,8 @@ class JoyTeleop(Node):
 def main():
 	rclpy.init()
 	joy_ctrl = JoyTeleop('joy_ctrl')
-	rclpy.spin(joy_ctrl)		
+	rclpy.spin(joy_ctrl)
+
+
+if __name__ == "__main__":
+    main()	
