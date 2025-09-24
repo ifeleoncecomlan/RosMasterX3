@@ -131,7 +131,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>0 0 0.3 0 -0 1.57</pose>
+      <pose>0 0 0.31 0 -0 1.57</pose>
     </model>
     <model name='arene_frame_with_door'>
       <static>1</static>
@@ -359,10 +359,10 @@
       <wall_time>1758455822 917014573</wall_time>
       <iterations>8597213</iterations>
       <model name='arene_base'>
-        <pose>0 0 0.3 0 -0 1.57</pose>
+        <pose>0 0 0.31 0 -0 1.57</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
-          <pose>0 0 0.3 0 -0 1.57</pose>
+          <pose>0 0 0.31 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
