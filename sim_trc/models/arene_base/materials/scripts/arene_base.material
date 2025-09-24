@@ -1,0 +1,13 @@
+material arene_base/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture CARTE.png
+      }
+    }
+  }
+}
