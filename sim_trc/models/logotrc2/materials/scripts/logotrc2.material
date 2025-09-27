@@ -1,0 +1,13 @@
+material logotrc2/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture logotrc2.png
+      }
+    }
+  }
+}
