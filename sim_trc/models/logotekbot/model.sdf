@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="logotekbot">
+    <static>true</static>
+    <link name="link">
+
+
+      <visual name="cube_visual">
+        <geometry>
+          <box>
+            <size>1.5 0 1.5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://logotekbot/materials/scripts/</uri>
+            <uri>model://logotekbot/materials/textures/</uri>
+            <name>logotekbot/FaceMaterial</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

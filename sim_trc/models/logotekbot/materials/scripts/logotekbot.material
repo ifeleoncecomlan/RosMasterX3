@@ -1,0 +1,13 @@
+material logotekbot/FaceMaterial
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture logotekbot.jpeg
+      }
+    }
+  }
+}

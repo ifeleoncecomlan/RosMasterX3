@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="logotrc2">
+    <static>true</static>
+    <link name="link">
+
+
+      <visual name="cube_visual">
+        <geometry>
+          <box>
+            <size>6.25 0 6.25</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://logotrc2/materials/scripts/</uri>
+            <uri>model://logotrc2/materials/textures/</uri>
+            <name>logotrc2/FaceMaterial</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

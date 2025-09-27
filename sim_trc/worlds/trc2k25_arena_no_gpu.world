@@ -1,11 +1,14 @@
 <sdf version='1.7'>
   <world name='default'>
-  
+
+
     <scene>
-      <ambient>0.7 0.7 0.7 0.7</ambient>
-      <background>0.7 0.7 0.7 1</background>
+      <ambient>0.8 0.8 0.8 0.8</ambient>
+      <background>0.8 0.8 0.8 1</background>
     </scene>
-    
+
+
+
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose>0 0 10 0 -0 0</pose>
@@ -98,22 +101,21 @@
     <model name='arene_base'>
       <static>1</static>
       <link name='base_link'>
-        <pose>-3.125 3.125 0 1.57 -0 0</pose>
         <visual name='base_visual'>
           <geometry>
-            <mesh>
-              <uri>model://arene_base/meshes/arene_base.STL</uri>
-              <scale>0.001 0.001 0.001</scale>
-            </mesh>
+            <box>
+              <size>6.25 6.25 0.6</size>
+            </box>
           </geometry>
           <material>
-            <ambient>0.9 0.9 0.9 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0.5 0.5 0.5 1</specular>
+            <script>
+              <uri>model://arene_base/materials/scripts/</uri>
+              <uri>model://arene_base/materials/textures/</uri>
+              <name>arene_base/FaceMaterial</name>
+            </script>
           </material>
         </visual>
         <collision name='base_collision'>
-          <pose>3.125 0.3 3.125 1.57 -0 0</pose>
           <geometry>
             <box>
               <size>6.25 6.25 0.6</size>
@@ -133,47 +135,11 @@
             </friction>
           </surface>
         </collision>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>0</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0</iyy>
-            <iyz>0</iyz>
-            <izz>0</izz>
-          </inertia>
-        </inertial>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>-0.292319 0.17323 0 0 -0 0</pose>
-    </model>
-    <model name='carte'>
-      <pose>0.014849 0.031947 0.61 0 -0 0</pose>
-      <static>1</static>
-      <link name='carte_link'>
-        <pose>0 0 0.001 0 -0 1.5708</pose>
-        <visual name='visual_carte'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>6.25 6.25 0.001</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://carte/materials/scripts</uri>
-              <uri>model://carte/materials/textures</uri>
-              <name>carte/carte</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
+      <pose>0 0 0.31 0 -0 1.57</pose>
     </model>
     <model name='arene_frame_with_door'>
       <static>1</static>
@@ -396,15 +362,15 @@
       <pose>-2.53904 -2.46951 0.601132 0 -0 1.57059</pose>
     </model>
     <state world_name='default'>
-      <sim_time>9436 133000000</sim_time>
-      <real_time>8900 681620059</real_time>
-      <wall_time>1758455822 917014573</wall_time>
-      <iterations>8597213</iterations>
+      <sim_time>12975 448000000</sim_time>
+      <real_time>4180 15570280</real_time>
+      <wall_time>1758983625 512084780</wall_time>
+      <iterations>3539315</iterations>
       <model name='arene_base'>
-        <pose>-0.0066 0.00257 0 0 -0 0</pose>
+        <pose>0 0 0.31 0 -0 1.57</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
-          <pose>-3.1316 3.12757 0 1.57 -0 0</pose>
+          <pose>0 0 0.31 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -455,16 +421,6 @@
         <scale>1 1 1</scale>
         <link name='link'>
           <pose>1.94349 -2.01674 0.612129 0 0 -3.13433</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='carte'>
-        <pose>-0.006184 -0.00231 0.61 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='carte_link'>
-          <pose>-0.006184 -0.00231 0.611 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -541,343 +497,343 @@
         </link>
       </model>
       <model name='dangereux_commerciale_batterie_ordinateur'>
-        <pose>2.13964 -1.07687 0.626667 0 -0 0.424645</pose>
+        <pose>2.13963 -1.07675 0.624997 0.000127 4e-06 0.410696</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.13964 -1.07687 0.626667 0 -0 0.424645</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>2.13963 -1.07675 0.624997 0.000127 4e-06 0.410696</pose>
+          <velocity>0.000819 -0.001727 -0.002594 0.115146 0.054592 -3e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_commerciale_batterie_ups'>
-        <pose>2.02915 -0.17114 0.626667 0 -0 0</pose>
+        <pose>2.02923 -0.171082 0.624997 -5.9e-05 1e-05 -0.001047</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.02915 -0.17114 0.626667 0 -0 0</pose>
+          <pose>2.02923 -0.171082 0.624997 -5.9e-05 1e-05 -0.001047</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_commerciale_batterie_vehicule_12V'>
-        <pose>2.18195 1.39111 0.626667 0 -0 0</pose>
+        <pose>2.18195 1.39113 0.624996 0 -3.7e-05 -0.000339</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.18195 1.39111 0.626667 0 -0 0</pose>
+          <pose>2.18195 1.39113 0.624996 0 -3.7e-05 -0.000339</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_commerciale_cartouche_imprimante'>
-        <pose>0.203567 1.73855 0.626667 0 -0 0</pose>
+        <pose>0.203582 1.73856 0.624996 5e-06 9.8e-05 0.001779</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.203567 1.73855 0.626667 0 -0 0</pose>
+          <pose>0.203582 1.73856 0.624996 5e-06 9.8e-05 0.001779</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_commerciale_cartouche_toner'>
-        <pose>0.294203 1.54519 0.626667 0 -0 0</pose>
+        <pose>0.294215 1.5452 0.624994 -5e-06 -9.8e-05 0.001779</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.294203 1.54519 0.626667 0 -0 0</pose>
+          <pose>0.294215 1.5452 0.624994 -5e-06 -9.8e-05 0.001779</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_commerciale_condensateur_pcb'>
-        <pose>0.777467 0.760784 0.626667 0 -0 0</pose>
+        <pose>0.777484 0.760806 0.624991 2e-06 6.7e-05 -0.001045</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.777467 0.760784 0.626667 0 -0 0</pose>
+          <pose>0.777484 0.760806 0.624991 2e-06 6.7e-05 -0.001045</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_commerciale_disque_dur_defaillant'>
-        <pose>0.680257 0.686428 0.626667 0 -0 0</pose>
+        <pose>0.680274 0.68645 0.624991 2e-06 6.7e-05 -0.001045</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.680257 0.686428 0.626667 0 -0 0</pose>
+          <pose>0.680274 0.68645 0.624991 2e-06 6.7e-05 -0.001045</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_commerciale_ecran_lcd_casse'>
-        <pose>0.752691 0.716508 0.626667 0 -0 0</pose>
+        <pose>0.752677 0.716546 0.624993 -9.2e-05 -9e-05 -0.003399</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.752691 0.716508 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.752677 0.716546 0.624993 -9.2e-05 -9e-05 -0.003399</pose>
+          <velocity>-0.001346 0.001387 -0.006833 -0.09244 -0.089702 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_commerciale_huile_hydraulique'>
-        <pose>1.2328 -0.086705 0.626667 0 -0 0</pose>
+        <pose>1.23282 -0.086615 0.625 0 0 -0.005904</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.2328 -0.086705 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.23282 -0.086615 0.625 0 0 -0.005904</pose>
+          <velocity>-3.5e-05 -0.001879 0.007132 0.125248 -0.002309 -2e-06</velocity>
+          <acceleration>-0.069279 -3.75753 14.2649 2.31104 1.47576 -3.13869</acceleration>
+          <wrench>-0.000619 -0.033555 0.127386 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_commerciale_liquide_frein'>
-        <pose>1.16983 0.050312 0.626667 0 -0 0</pose>
+        <pose>1.16985 0.050402 0.625 0 0 -0.005904</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.16983 0.050312 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.16985 0.050402 0.625 0 0 -0.005904</pose>
+          <velocity>-3.5e-05 -0.001879 0.007132 0.125248 -0.002309 -2e-06</velocity>
+          <acceleration>-0.069279 -3.75753 14.2649 2.31103 1.47576 -3.13869</acceleration>
+          <wrench>-0.000619 -0.033555 0.127386 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_commerciale_liquide_refroidissement'>
-        <pose>0.773216 -0.810016 0.626667 0 -0 0</pose>
+        <pose>0.773248 -0.809927 0.624994 -8.6e-05 -1e-06 -0.007411</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.773216 -0.810016 0.626667 0 -0 0</pose>
+          <pose>0.773248 -0.809927 0.624994 -8.6e-05 -1e-06 -0.007411</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_amiante_plaque'>
-        <pose>2.06779 -1.03807 0.626667 0 0 -0.589348</pose>
+        <pose>2.06779 -1.03809 0.624998 3.2e-05 8.5e-05 -0.589509</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.06779 -1.03807 0.626667 0 0 -0.589348</pose>
+          <pose>2.06779 -1.03809 0.624998 3.2e-05 8.5e-05 -0.589509</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_chrome_hexavalent'>
-        <pose>1.43092 -1.22916 0.626667 0 -0 0</pose>
+        <pose>1.43092 -1.22914 0.624992 0 2.1e-05 -0.000327</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.43092 -1.22916 0.626667 0 -0 0</pose>
+          <pose>1.43092 -1.22914 0.624992 0 2.1e-05 -0.000327</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_cyanure_industriel'>
-        <pose>1.59845 0.814644 0.626667 0 -0 0</pose>
+        <pose>1.59847 0.81469 0.624997 -0.000108 -4e-06 -0.002021</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.59845 0.814644 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.59847 0.81469 0.624997 -0.000108 -4e-06 -0.002021</pose>
+          <velocity>-5.6e-05 0.001615 -0.002998 -0.107683 -0.003711 -3e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_dechet_chimique_fût'>
-        <pose>0.958956 1.39787 0.626667 0 -0 0</pose>
+        <pose>0.958975 1.39792 0.624997 -0.000108 -4e-06 -0.002021</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.958956 1.39787 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.958975 1.39792 0.624997 -0.000108 -4e-06 -0.002021</pose>
+          <velocity>-5.6e-05 0.001615 -0.002998 -0.107684 -0.003711 -3e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_dechet_medical_hopital'>
-        <pose>0.257354 1.68284 0.626667 0 -0 0</pose>
+        <pose>0.2574 1.683 0.625 0 0 -0.010994</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.257354 1.68284 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.2574 1.683 0.625 0 0 -0.010994</pose>
+          <velocity>-4.5e-05 -0.001879 0.007132 0.125251 -0.002987 -2e-06</velocity>
+          <acceleration>-0.089637 -3.7576 14.2644 -0.826054 0.308646 0.002906</acceleration>
+          <wrench>-0.0008 -0.033555 0.127381 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_dechet_pharmaceutique'>
-        <pose>0.260958 1.61272 0.626667 0 -0 0</pose>
+        <pose>0.261004 1.61288 0.625 0 0 -0.010994</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.260958 1.61272 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.261004 1.61288 0.625 0 0 -0.010994</pose>
+          <velocity>-4.5e-05 -0.001879 0.007132 0.125251 -0.002987 -2e-06</velocity>
+          <acceleration>-0.089637 -3.7576 14.2644 -0.826057 0.30865 0.002906</acceleration>
+          <wrench>-0.0008 -0.033555 0.127381 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_dechet_radioactif_faible'>
-        <pose>0.82873 0.667312 0.626667 0 -0 0</pose>
+        <pose>0.828776 0.667472 0.625 0 0 -0.010994</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.82873 0.667312 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.828776 0.667472 0.625 0 0 -0.010994</pose>
+          <velocity>-4.5e-05 -0.001879 0.007132 0.125251 -0.002987 -2e-06</velocity>
+          <acceleration>-0.089637 -3.7576 14.2644 -0.826055 0.308655 0.002906</acceleration>
+          <wrench>-0.0008 -0.033555 0.127381 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_formaldehyde_industriel'>
-        <pose>0.770031 0.645487 0.626667 0 -0 0</pose>
+        <pose>0.770077 0.645647 0.625 0 -0 -0.010994</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.770031 0.645487 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.770077 0.645647 0.625 0 -0 -0.010994</pose>
+          <velocity>4.5e-05 0.001879 0.002668 -0.125251 0.002991 -5e-06</velocity>
+          <acceleration>0.089741 3.75761 5.3354 0.825692 -0.301707 -0.002906</acceleration>
+          <wrench>0.000801 0.033555 0.047645 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_mercure_industriel'>
-        <pose>0.828886 0.595264 0.626667 0 -0 0</pose>
+        <pose>0.828888 0.595279 0.624996 4.8e-05 1e-06 -0.000195</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.828886 0.595264 0.626667 0 -0 0</pose>
+          <pose>0.828888 0.595279 0.624996 4.8e-05 1e-06 -0.000195</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_pcb_transformateur'>
-        <pose>1.16893 -0.127861 0.626667 0 -0 0</pose>
+        <pose>1.16898 -0.127725 0.624993 -0.000125 2e-06 -0.01152</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.16893 -0.127861 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.16898 -0.127725 0.624993 -0.000125 2e-06 -0.01152</pose>
+          <velocity>4.6e-05 0.001879 -0.007132 -0.125251 0.003057 -5e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_pesticide_industriel'>
-        <pose>1.13673 0.092687 0.626667 0 -0 0</pose>
+        <pose>1.13678 0.092823 0.624993 -0.000125 2e-06 -0.01152</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.13673 0.092687 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.13678 0.092823 0.624993 -0.000125 2e-06 -0.01152</pose>
+          <velocity>4.6e-05 0.001879 -0.007132 -0.125251 0.003057 -5e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_industrielle_plomb_batterie_industriel'>
-        <pose>0.704527 -0.787095 0.626667 0 -0 0</pose>
+        <pose>0.704578 -0.786902 0.624993 -0.000125 2e-06 -0.011852</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.704527 -0.787095 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.704578 -0.786902 0.624993 -0.000125 2e-06 -0.011852</pose>
+          <velocity>4.7e-05 0.001879 -0.007132 -0.125251 0.003102 -5e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_residentielle_aerosol_vide'>
-        <pose>1.98518 -0.220154 0.626667 0 -0 0</pose>
+        <pose>1.98517 -0.220172 0.624995 -5.8e-05 3e-06 -0.001087</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.98518 -0.220154 0.626667 0 -0 0</pose>
+          <pose>1.98517 -0.220172 0.624995 -5.8e-05 3e-06 -0.001087</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_residentielle_ampoule_led_cassee'>
-        <pose>1.2209 -1.2726 0.626667 0 -0 0</pose>
+        <pose>1.2209 -1.27253 0.625 0 -0 -0.004709</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.2209 -1.2726 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.2209 -1.27253 0.625 0 -0 -0.004709</pose>
+          <velocity>2.3e-05 0.001844 0.002676 -0.122914 0.00156 -5e-06</velocity>
+          <acceleration>0.046821 3.68749 5.35165 2.35847 0.021405 3.1388</acceleration>
+          <wrench>0.000418 0.032929 0.04779 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_residentielle_batterie_telephone'>
-        <pose>2.31903 1.37532 0.626667 0 -0 0</pose>
+        <pose>2.31905 1.37537 0.624992 -4.3e-05 -4e-06 -0.005211</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.31903 1.37532 0.626667 0 -0 0</pose>
+          <pose>2.31905 1.37537 0.624992 -4.3e-05 -4e-06 -0.005211</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_residentielle_chargeur_telephone'>
-        <pose>1.65737 0.820072 0.626667 0 -0 0</pose>
+        <pose>1.65739 0.820107 0.625 0 0 -0.005838</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.65737 0.820072 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.65739 0.820107 0.625 0 0 -0.005838</pose>
+          <velocity>-3.4e-05 -0.001879 0.007132 0.125248 -0.0023 -2e-06</velocity>
+          <acceleration>-0.069016 -3.75753 14.2649 2.31095 1.45824 -3.13869</acceleration>
+          <wrench>-0.000616 -0.033555 0.127386 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_residentielle_dechets_electronique'>
-        <pose>0.339312 1.63449 0.626667 0 -0 0</pose>
+        <pose>0.339329 1.63457 0.625 0 0 -0.00903</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.339312 1.63449 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.339329 1.63457 0.625 0 0 -0.00903</pose>
+          <velocity>-0.001335 0.001394 0.002964 -0.092951 -0.088972 0</velocity>
+          <acceleration>-2.66925 2.78863 5.92714 -0.548478 -1.12686 -3.14034</acceleration>
+          <wrench>-0.023836 0.024902 0.052929 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_residentielle_huile_vidange'>
-        <pose>0.195343 1.67365 0.626667 0 -0 0</pose>
+        <pose>0.19536 1.67373 0.625 0 0 -0.009028</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.195343 1.67365 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.19536 1.67373 0.625 0 0 -0.009028</pose>
+          <velocity>-0.001335 0.001394 0.002964 -0.092951 -0.088972 0</velocity>
+          <acceleration>-2.66926 2.78863 5.92714 -0.548226 -1.12651 -3.14034</acceleration>
+          <wrench>-0.023836 0.024902 0.052929 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_residentielle_insecticide_aerosol'>
-        <pose>0.365197 1.57255 0.626667 0 -0 0</pose>
+        <pose>0.365225 1.5726 0.624997 3.5e-05 -0 -0.0068</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.365197 1.57255 0.626667 0 -0 0</pose>
+          <pose>0.365225 1.5726 0.624997 3.5e-05 -0 -0.0068</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_residentielle_medicament_expire'>
-        <pose>0.755523 0.562261 0.626667 0 -0 0</pose>
+        <pose>0.755551 0.56231 0.624997 3.5e-05 -0 -0.0068</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.755523 0.562261 0.626667 0 -0 0</pose>
+          <pose>0.755551 0.56231 0.624997 3.5e-05 -0 -0.0068</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_residentielle_peinture_pot_vide'>
-        <pose>1.06614 0.072154 0.626667 0 -0 0</pose>
+        <pose>1.06616 0.072185 0.624997 3.5e-05 -0 -0.005637</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.06614 0.072154 0.626667 0 -0 0</pose>
+          <pose>1.06616 0.072185 0.624997 3.5e-05 -0 -0.005637</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_residentielle_pile_alcaline'>
-        <pose>1.20262 -0.012524 0.626667 0 -0 0</pose>
+        <pose>1.20264 -0.012493 0.624997 3.5e-05 -0 -0.005637</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.20262 -0.012524 0.626667 0 -0 0</pose>
+          <pose>1.20264 -0.012493 0.624997 3.5e-05 -0 -0.005637</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='dangereux_residentielle_pile_bouton'>
-        <pose>0.832808 -0.595827 0.626667 0 -0 0</pose>
+        <pose>0.832816 -0.595719 0.624993 -0.000125 2e-06 -0.008386</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.832808 -0.595827 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.832816 -0.595719 0.624993 -0.000125 2e-06 -0.008386</pose>
+          <velocity>4e-05 0.001879 -0.007132 -0.12525 0.00264 -5e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='ground_plane'>
@@ -890,294 +846,464 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='menagers_commerciale_barquette_salade'>
-        <pose>2.25528 -1.15401 0.626667 0 -0 0</pose>
+      <model name='logotrc'>
+        <pose>-2.27345 -3.12458 0.303721 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.25528 -1.15401 0.626667 0 -0 0</pose>
+          <pose>-2.27345 -3.12458 0.303721 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc2'>
+        <pose>-0.009062 0.011293 -0.004317 1.56845 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.009062 0.011293 -0.004317 1.56845 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc3'>
+        <pose>2.53713 -3.12845 0.299676 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.53713 -3.12845 0.299676 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc3_0'>
+        <pose>-2.54159 3.1279 0.303472 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-2.54159 3.1279 0.303472 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc3_1'>
+        <pose>-3.12425 2.55037 0.304769 0 -0 1.56977</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-3.12425 2.55037 0.304769 0 -0 1.56977</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc3_2'>
+        <pose>3.12379 -2.54498 0.298456 0 0 -1.57232</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>3.12379 -2.54498 0.298456 0 0 -1.57232</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc_0'>
+        <pose>-0.579711 -3.12576 0.30334 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.579711 -3.12576 0.30334 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc_1'>
+        <pose>1.11197 -3.12746 0.302778 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.11197 -3.12746 0.302778 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc_10'>
+        <pose>3.12477 -1.11868 0.302811 0 0 -1.57105</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>3.12477 -1.11868 0.302811 0 0 -1.57105</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc_2'>
+        <pose>2.26663 3.12585 0.307285 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.26663 3.12585 0.307285 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc_3'>
+        <pose>0.565695 3.12622 0.307081 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.565695 3.12622 0.307081 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc_4'>
+        <pose>-1.1334 3.12676 0.30575 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-1.1334 3.12676 0.30575 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc_5'>
+        <pose>-3.12904 -2.26559 0.304752 0 -0 1.57075</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-3.12904 -2.26559 0.304752 0 -0 1.57075</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc_6'>
+        <pose>-3.12713 -0.563314 0.304652 0 -0 1.5683</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-3.12713 -0.563314 0.304652 0 -0 1.5683</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc_7'>
+        <pose>-3.12468 1.13679 0.306782 0 -0 1.57017</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-3.12468 1.13679 0.306782 0 -0 1.57017</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc_8'>
+        <pose>3.133 2.26961 0.302761 0 0 -1.57112</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>3.133 2.26961 0.302761 0 0 -1.57112</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logotrc_9'>
+        <pose>3.12824 0.575178 0.302189 0 0 -1.57374</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>3.12824 0.575178 0.302189 0 0 -1.57374</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='menagers_commerciale_barquette_salade'>
+        <pose>2.25529 -1.15391 0.625 -0 -0 -0.009215</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.25529 -1.15391 0.625 -0 -0 -0.009215</pose>
+          <velocity>0.001066 -0.001827 0.006557 0.12177 0.071052 -2e-06</velocity>
+          <acceleration>2.13162 -3.65321 13.1132 1.63641 -0.732251 -3.14081</acceleration>
+          <wrench>0.019035 -0.032623 0.117101 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_commerciale_boite_pizza'>
-        <pose>2.22571 -1.09025 0.626667 0 -0 0.49664</pose>
+        <pose>2.22572 -1.09026 0.625 -1e-06 7e-06 0.495794</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.22571 -1.09025 0.626667 0 -0 0.49664</pose>
+          <pose>2.22572 -1.09026 0.625 -1e-06 7e-06 0.495794</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_commerciale_bouteille_jus'>
-        <pose>1.87734 -0.313376 0.626667 0 -0 0</pose>
+        <pose>1.87732 -0.313326 0.625 -0 -0 -0.002421</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.87734 -0.313376 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.87732 -0.313326 0.625 -0 -0 -0.002421</pose>
+          <velocity>0.001001 -0.00137 0.007194 0.091319 0.066749 -1e-06</velocity>
+          <acceleration>2.00254 -2.73964 14.388 0.424847 1.552 -9.5e-05</acceleration>
+          <wrench>0.017883 -0.024465 0.128485 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_commerciale_bouteille_smoothie'>
-        <pose>1.98228 -0.116304 0.626667 0 -0 0</pose>
+        <pose>1.98228 -0.11628 0.624997 -3.5e-05 -2.2e-05 -0.000421</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.98228 -0.116304 0.626667 0 -0 0</pose>
+          <pose>1.98228 -0.11628 0.624997 -3.5e-05 -2.2e-05 -0.000421</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_commerciale_canette_cafe'>
-        <pose>1.42057 -1.16626 0.626667 0 -0 0</pose>
+        <pose>1.42062 -1.16618 0.624999 -0 -3.3e-05 -0.00772</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.42057 -1.16626 0.626667 0 -0 0</pose>
+          <pose>1.42062 -1.16618 0.624999 -0 -3.3e-05 -0.00772</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_commerciale_canette_the'>
-        <pose>1.28588 -1.25856 0.626667 0 -0 0</pose>
+        <pose>1.28593 -1.25848 0.624999 -0 -3.3e-05 -0.00772</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.28588 -1.25856 0.626667 0 -0 0</pose>
+          <pose>1.28593 -1.25848 0.624999 -0 -3.3e-05 -0.00772</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_commerciale_emballage_croissant'>
-        <pose>1.71155 0.810933 0.626667 0 -0 0</pose>
+        <pose>1.71155 0.810987 0.625 0 0 -0.005496</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.71155 0.810933 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.71155 0.810987 0.625 0 0 -0.005496</pose>
+          <velocity>-0.001686 0.001163 0.003182 -0.077511 -0.112425 2e-06</velocity>
+          <acceleration>-3.37287 2.32542 6.36452 2.05674 1.34556 0.003228</acceleration>
+          <wrench>-0.03012 0.020766 0.056835 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_commerciale_emballage_sandwich'>
-        <pose>0.922314 1.42772 0.626667 0 -0 0</pose>
+        <pose>0.922312 1.42777 0.625 0 0 -0.005496</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.922314 1.42772 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.922312 1.42777 0.625 0 0 -0.005496</pose>
+          <velocity>-0.001686 0.001163 0.003182 -0.077513 -0.112424 2e-06</velocity>
+          <acceleration>-3.37286 2.32547 6.36457 2.05357 1.346 0.003228</acceleration>
+          <wrench>-0.03012 0.020766 0.056836 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_commerciale_gobelet_distributeur'>
-        <pose>1.02604 1.41766 0.626667 0 -0 0</pose>
+        <pose>1.02604 1.41771 0.624997 7.7e-05 0.000113 -0.005496</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.02604 1.41766 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.02604 1.41771 0.624997 7.7e-05 0.000113 -0.005496</pose>
+          <velocity>0.001686 -0.001163 -0.003182 0.077511 0.112425 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_commerciale_gobelet_glace'>
-        <pose>0.310081 1.71404 0.626667 0 -0 0</pose>
+        <pose>0.310081 1.71409 0.624997 7.7e-05 0.000113 -0.005496</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.310081 1.71404 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.310081 1.71409 0.624997 7.7e-05 0.000113 -0.005496</pose>
+          <velocity>0.001686 -0.001163 -0.003182 0.077514 0.112424 -2e-06</velocity>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_commerciale_pot_sauce'>
-        <pose>0.667475 -0.716975 0.626667 0 -0 0</pose>
+        <pose>0.667517 -0.717011 0.625 0 0 -0.001079</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.667475 -0.716975 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.667517 -0.717011 0.625 0 0 -0.001079</pose>
+          <velocity>-0.001924 -0.000677 0.002848 0.045161 -0.128281 4e-06</velocity>
+          <acceleration>-3.84853 -1.35486 5.69555 2.35765 1.04823 0.004629</acceleration>
+          <wrench>-0.034367 -0.012099 0.050861 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_industrielle_bidon_eau_5L'>
-        <pose>2.15921 -1.18686 0.626667 0 -0 0.462592</pose>
+        <pose>2.15921 -1.18684 0.624992 0.000122 -1e-06 0.453067</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.15921 -1.18686 0.626667 0 -0 0.462592</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>2.15921 -1.18684 0.624992 0.000122 -1e-06 0.453067</pose>
+          <velocity>0.000794 -0.001649 -0.007786 0.109955 0.052899 2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_industrielle_bidon_huile_moteur'>
-        <pose>1.92302 -0.2774 0.626667 0 -0 0</pose>
+        <pose>1.92313 -0.277239 0.625 0 -0 -0.00668</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.92302 -0.2774 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.92313 -0.277239 0.625 0 -0 -0.00668</pose>
+          <velocity>3.6e-05 0.001879 0.002668 -0.125249 0.002412 -5e-06</velocity>
+          <acceleration>0.072387 3.75755 5.33518 0.829585 -1.45867 -0.002905</acceleration>
+          <wrench>0.000646 0.033555 0.047643 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_industrielle_big_bag_vide'>
-        <pose>1.87707 -0.206777 0.626667 0 -0 0</pose>
+        <pose>1.87718 -0.206616 0.625 0 -0 -0.00668</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.87707 -0.206777 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.87718 -0.206616 0.625 0 -0 -0.00668</pose>
+          <velocity>3.6e-05 0.001879 0.002668 -0.125249 0.002412 -5e-06</velocity>
+          <acceleration>0.072387 3.75755 5.33518 0.82959 -1.45867 -0.002905</acceleration>
+          <wrench>0.000646 0.033555 0.047643 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_industrielle_caisse_plastique'>
-        <pose>2.24682 1.36246 0.626667 0 -0 0</pose>
+        <pose>2.24675 1.36235 0.624991 1.8e-05 0 -0.002003</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.24682 1.36246 0.626667 0 -0 0</pose>
+          <pose>2.24675 1.36235 0.624991 1.8e-05 0 -0.002003</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_industrielle_feuillard_acier'>
-        <pose>1.60308 0.753295 0.626667 0 -0 0</pose>
+        <pose>1.60308 0.753348 0.624997 7.7e-05 0.000113 -0.005496</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.60308 0.753295 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.60308 0.753348 0.624997 7.7e-05 0.000113 -0.005496</pose>
+          <velocity>0.001686 -0.001163 -0.003182 0.07751 0.112425 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_industrielle_film_plastique_palette'>
-        <pose>1.60224 0.968301 0.626667 0 -0 0</pose>
+        <pose>1.60224 0.968354 0.624997 7.7e-05 0.000113 -0.005496</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.60224 0.968301 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.60224 0.968354 0.624997 7.7e-05 0.000113 -0.005496</pose>
+          <velocity>0.001686 -0.001163 -0.003182 0.07751 0.112425 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_industrielle_fût_metal_200L'>
-        <pose>1.06594 1.36642 0.626667 0 -0 0</pose>
+        <pose>1.06594 1.36647 0.624997 7.7e-05 0.000113 -0.005496</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.06594 1.36642 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.06594 1.36647 0.624997 7.7e-05 0.000113 -0.005496</pose>
+          <velocity>0.001686 -0.001163 -0.003182 0.077511 0.112425 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_industrielle_jerrycan_20L'>
-        <pose>1.10947 1.3992 0.626667 0 -0 0</pose>
+        <pose>1.10947 1.39925 0.624997 7.7e-05 0.000113 -0.005496</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.10947 1.3992 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.10947 1.39925 0.624997 7.7e-05 0.000113 -0.005496</pose>
+          <velocity>0.001686 -0.001163 -0.003182 0.077511 0.112425 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_industrielle_palette_bois_cassee'>
-        <pose>1.11066 0.025906 0.626667 0 -0 0</pose>
+        <pose>1.11064 0.025941 0.624997 8.4e-05 6.2e-05 -0.004417</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.11066 0.025906 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.11064 0.025941 0.624997 8.4e-05 6.2e-05 -0.004417</pose>
+          <velocity>0.00093 -0.00126 -0.002645 0.083986 0.062026 -1e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_industrielle_rouleau_carton'>
-        <pose>0.763218 -0.649949 0.626667 0 -0 0</pose>
+        <pose>0.763213 -0.64984 0.625 0 -0 -0.00724</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.763218 -0.649949 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.763213 -0.64984 0.625 0 -0 -0.00724</pose>
+          <velocity>3.7e-05 0.001879 0.002668 -0.125249 0.002487 -5e-06</velocity>
+          <acceleration>0.074626 3.75756 5.33524 0.828867 -1.30936 -0.002905</acceleration>
+          <wrench>0.000666 0.033555 0.047644 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_residentielle_barquette_viande'>
-        <pose>2.22019 -1.21044 0.626667 0 -0 0</pose>
+        <pose>2.22021 -1.21042 0.625 0 -0 -0.006621</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.22019 -1.21044 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>2.22021 -1.21042 0.625 0 -0 -0.006621</pose>
+          <velocity>0.001001 0.002021 0.006443 -0.134698 0.066746 -4e-06</velocity>
+          <acceleration>2.00249 4.0412 12.8858 0.780146 1.54422 -0.005858</acceleration>
+          <wrench>0.017882 0.036088 0.11507 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_residentielle_boite_cereales'>
-        <pose>2.18767 -1.13224 0.626667 0 0 -0.579598</pose>
+        <pose>2.18776 -1.13221 0.624992 -1.6e-05 0.000109 -0.579343</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.18767 -1.13224 0.626667 0 0 -0.579598</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>2.18776 -1.13221 0.624992 -1.6e-05 0.000109 -0.579343</pose>
+          <velocity>0.001505 -0.000694 -0.0076 0.04625 0.100332 -0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_residentielle_boite_conserve_tomate'>
-        <pose>1.94428 -0.175582 0.626667 0 -0 0</pose>
+        <pose>1.94428 -0.175542 0.624991 1.8e-05 0 -0.004042</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.94428 -0.175582 0.626667 0 -0 0</pose>
+          <pose>1.94428 -0.175542 0.624991 1.8e-05 0 -0.004042</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_residentielle_bouteille_huile'>
-        <pose>1.91332 -0.129727 0.626667 0 -0 0</pose>
+        <pose>1.91332 -0.129687 0.624991 1.8e-05 0 -0.004042</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.91332 -0.129727 0.626667 0 -0 0</pose>
+          <pose>1.91332 -0.129687 0.624991 1.8e-05 0 -0.004042</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_residentielle_bouteille_lait'>
-        <pose>2.15782 1.31041 0.626667 0 -0 0</pose>
+        <pose>2.15775 1.3103 0.624991 1.8e-05 0 -0.002003</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.15782 1.31041 0.626667 0 -0 0</pose>
+          <pose>2.15775 1.3103 0.624991 1.8e-05 0 -0.002003</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_residentielle_bouteille_plastique_eau'>
-        <pose>1.00544 1.47644 0.626667 0 -0 0</pose>
+        <pose>1.00544 1.47649 0.624997 7.7e-05 0.000113 -0.005496</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.00544 1.47644 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.00544 1.47649 0.624997 7.7e-05 0.000113 -0.005496</pose>
+          <velocity>0.001686 -0.001163 -0.003182 0.077513 0.112424 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_residentielle_canette_soda'>
-        <pose>1.08082 1.47095 0.626667 0 -0 0</pose>
+        <pose>1.08082 1.471 0.624997 7.7e-05 0.000113 -0.005496</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.08082 1.47095 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.08082 1.471 0.624997 7.7e-05 0.000113 -0.005496</pose>
+          <velocity>0.001686 -0.001163 -0.003182 0.077511 0.112425 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='menagers_residentielle_emballage_biscuit'>
-        <pose>0.761077 -0.574584 0.626667 0 -0 0</pose>
+        <pose>0.761197 -0.574404 0.625 0 -0 -0.007725</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.761077 -0.574584 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.761197 -0.574404 0.625 0 -0 -0.007725</pose>
+          <velocity>3.8e-05 0.001879 0.002668 -0.12525 0.002552 -5e-06</velocity>
+          <acceleration>0.076566 3.75757 5.33529 0.828349 -1.18006 -0.002905</acceleration>
+          <wrench>0.000684 0.033555 0.047644 0 -0 0</wrench>
         </link>
       </model>
       <model name='pancarte_qr_code_erevan'>
@@ -1254,7 +1380,7 @@
         <model name='pancarte'>
           <pose>2.02828 -0.099552 0.611734 1.55978 -0 2.30094</pose>
           <scale>1 1 1</scale>
-          <link name='link'>
+          <link name='pancarte_qr_code_zone1Tampouy_link'>
             <pose>2.02828 -0.099552 0.611734 1.55978 -0 2.30094</pose>
             <velocity>0 0 0 0 -0 0</velocity>
             <acceleration>0 0 0 0 -0 0</acceleration>
@@ -1283,7 +1409,7 @@
         </model>
       </model>
       <model name='pancarte_qr_code_zone2BeauSejour'>
-        <pose>1.13365 1.46964 0.649378 0 0 -1.11219</pose>
+        <pose>1.13365 1.46965 0.649378 0 0 -1.11219</pose>
         <scale>1 1 1</scale>
         <model name='pancarte'>
           <pose>1.13469 1.47006 0.611734 1.55978 0 -1.11219</pose>
@@ -1351,7 +1477,7 @@
         </model>
       </model>
       <model name='pancarte_qr_code_zone2Missebo'>
-        <pose>2.3585 1.34573 0.649378 0 0 -1.71538</pose>
+        <pose>2.3585 1.34573 0.649378 -0 -0 -1.71538</pose>
         <scale>1 1 1</scale>
         <model name='pancarte'>
           <pose>2.35959 1.34548 0.611734 1.55978 0 -1.71538</pose>
@@ -1385,7 +1511,7 @@
         </model>
       </model>
       <model name='pancarte_qr_code_zone2NabiYaar'>
-        <pose>1.65183 0.703945 0.649378 -0 -0 -0.013896</pose>
+        <pose>1.65183 0.703944 0.649378 0 0 -0.013896</pose>
         <scale>1 1 1</scale>
         <model name='pancarte'>
           <pose>1.65193 0.705058 0.611734 1.55978 0 -0.013896</pose>
@@ -1521,373 +1647,373 @@
         </model>
       </model>
       <model name='recyclables_commerciale_bouteille_eau_propre'>
-        <pose>2.09061 -1.13702 0.626667 0 -0 0</pose>
+        <pose>2.09062 -1.13706 0.624996 -9.7e-05 -1e-06 -0.000868</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.09061 -1.13702 0.626667 0 -0 0</pose>
+          <pose>2.09062 -1.13706 0.624996 -9.7e-05 -1e-06 -0.000868</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_commerciale_bouteille_verre_biere'>
-        <pose>1.82618 -0.189429 0.626667 0 -0 0</pose>
+        <pose>1.8262 -0.189412 0.624991 -0 7.7e-05 -0.002275</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.82618 -0.189429 0.626667 0 -0 0</pose>
+          <pose>1.8262 -0.189412 0.624991 -0 7.7e-05 -0.002275</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_commerciale_canette_boisson_propre'>
-        <pose>1.25334 -1.13577 0.626667 0 -0 0</pose>
+        <pose>1.25333 -1.13576 0.625 0 0 -0.003389</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.25334 -1.13577 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.25333 -1.13576 0.625 0 0 -0.003389</pose>
+          <velocity>-0.001346 0.001387 0.002967 -0.092439 -0.089703 0</velocity>
+          <acceleration>-2.69119 2.77327 5.93408 0.475352 0.335627 -3.14031</acceleration>
+          <wrench>-0.024032 0.024765 0.052991 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_commerciale_carton_emballage'>
-        <pose>1.36758 -1.25006 0.626667 0 -0 0</pose>
+        <pose>1.36759 -1.24991 0.625 0 0 -0.01103</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.36758 -1.25006 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.36759 -1.24991 0.625 0 0 -0.01103</pose>
+          <velocity>-0.001221 0.001833 0.003354 -0.12217 -0.081381 -3e-06</velocity>
+          <acceleration>-2.4415 3.66522 6.70774 0.705155 0.601452 -0.000236</acceleration>
+          <wrench>-0.021803 0.03273 0.0599 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_commerciale_metal_conserve_grande'>
-        <pose>2.16152 1.4364 0.626667 0 -0 0</pose>
+        <pose>2.16155 1.43649 0.625 -1e-06 -6e-06 -0.007125</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.16152 1.4364 0.626667 0 -0 0</pose>
+          <pose>2.16155 1.43649 0.625 -1e-06 -6e-06 -0.007125</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_commerciale_papier_bureau_blanc'>
-        <pose>2.10614 1.3992 0.626667 0 -0 0</pose>
+        <pose>2.10613 1.39925 0.625 0 0 -0.006724</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.10614 1.3992 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>2.10613 1.39925 0.625 0 0 -0.006724</pose>
+          <velocity>-0.001339 0.001391 0.002965 -0.092744 -0.08929 0</velocity>
+          <acceleration>-2.67878 2.78242 5.93067 -0.13454 -0.491325 -3.14033</acceleration>
+          <wrench>-0.023922 0.024847 0.052961 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_commerciale_papier_journal_commercial'>
-        <pose>1.68511 0.891341 0.626667 0 -0 0</pose>
+        <pose>1.68513 0.891398 0.624995 0 -8.1e-05 -0.003239</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.68511 0.891341 0.626667 0 -0 0</pose>
+          <pose>1.68513 0.891398 0.624995 0 -8.1e-05 -0.003239</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_commerciale_plastique_rigide_propre'>
-        <pose>0.920383 1.30586 0.626667 0 -0 0</pose>
+        <pose>0.920383 1.3059 0.625 -1e-06 -1.9e-05 -0.004072</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.920383 1.30586 0.626667 0 -0 0</pose>
+          <pose>0.920383 1.3059 0.625 -1e-06 -1.9e-05 -0.004072</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_commerciale_plastique_transparent'>
-        <pose>0.705402 0.780784 0.626667 0 -0 0</pose>
+        <pose>0.705462 0.78085 0.624992 0.000128 6e-06 -0.008589</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.705402 0.780784 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.705462 0.78085 0.624992 0.000128 6e-06 -0.008589</pose>
+          <velocity>7.9e-05 -0.001921 -0.007624 0.128056 0.005234 3e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_commerciale_verre_bocal_1L'>
-        <pose>1.05793 -0.002066 0.626667 0 -0 0</pose>
+        <pose>1.05799 -0.002 0.624992 0.000128 6e-06 -0.008589</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.05793 -0.002066 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.05799 -0.002 0.624992 0.000128 6e-06 -0.008589</pose>
+          <velocity>7.9e-05 -0.001921 -0.007624 0.128056 0.005234 3e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_commerciale_verre_restaurant'>
-        <pose>0.818306 -0.660726 0.626667 0 -0 0</pose>
+        <pose>0.818323 -0.660721 0.624996 0 7.6e-05 -0.001942</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.818306 -0.660726 0.626667 0 -0 0</pose>
+          <pose>0.818323 -0.660721 0.624996 0 7.6e-05 -0.001942</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_aluminium_industriel'>
-        <pose>2.03335 -1.10235 0.626667 0 0 -0.538917</pose>
+        <pose>2.03343 -1.10231 0.624999 -1.7e-05 -0 -0.540505</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.03335 -1.10235 0.626667 0 0 -0.538917</pose>
+          <pose>2.03343 -1.10231 0.624999 -1.7e-05 -0 -0.540505</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_bronze_industriel'>
-        <pose>1.8266 -0.261969 0.626667 0 -0 0</pose>
+        <pose>1.82664 -0.261894 0.625 -0 -0 -0.008562</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.8266 -0.261969 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.82664 -0.261894 0.625 -0 -0 -0.008562</pose>
+          <velocity>0.001858 0.000379 0.007615 -0.025257 0.123894 0</velocity>
+          <acceleration>3.71698 0.757708 15.2296 2.8933 0.397193 -3.13709</acceleration>
+          <wrench>0.033193 0.006766 0.136 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_carton_compacte'>
-        <pose>1.35298 -1.18785 0.626667 0 -0 0</pose>
+        <pose>1.35299 -1.1878 0.625 0 0 -0.008147</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.35298 -1.18785 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.35299 -1.1878 0.625 0 0 -0.008147</pose>
+          <velocity>-0.001594 -0.002047 0.003828 0.136467 -0.106248 0</velocity>
+          <acceleration>-3.18766 -4.09427 7.65629 2.75794 1.13144 0.001866</acceleration>
+          <wrench>-0.028466 -0.036562 0.068371 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_carton_ondule_industriel'>
-        <pose>1.35874 -1.1334 0.626667 0 -0 0</pose>
+        <pose>1.35876 -1.13329 0.624996 7.5e-05 5.1e-05 -0.007514</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.35874 -1.1334 0.626667 0 -0 0</pose>
+          <pose>1.35876 -1.13329 0.624996 7.5e-05 5.1e-05 -0.007514</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_carton_ondule_industriel_0'>
-        <pose>0.795964 -0.744527 0.626667 0 -0 0</pose>
+        <pose>0.796107 -0.744351 0.624997 0.000123 -1e-06 -0.007151</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.795964 -0.744527 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.796107 -0.744351 0.624997 0.000123 -1e-06 -0.007151</pose>
+          <velocity>-2.8e-05 -0.001844 -0.002676 0.122915 -0.001878 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_cuivre_fil'>
-        <pose>2.30585 1.30242 0.626667 0 -0 0</pose>
+        <pose>2.30586 1.30245 0.624992 9.7e-05 -4e-06 -0.001778</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.30585 1.30242 0.626667 0 -0 0</pose>
+          <pose>2.30586 1.30245 0.624992 9.7e-05 -4e-06 -0.001778</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_ferraille_acier'>
-        <pose>2.24251 1.29041 0.626667 0 -0 0</pose>
+        <pose>2.24252 1.29044 0.624992 9.7e-05 -4e-06 -0.001946</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.24251 1.29041 0.626667 0 -0 0</pose>
+          <pose>2.24252 1.29044 0.624992 9.7e-05 -4e-06 -0.001946</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_metal_inox'>
-        <pose>1.73196 0.916978 0.626667 0 -0 0</pose>
+        <pose>1.73199 0.917085 0.624993 -0 8e-06 -0.007163</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.73196 0.916978 0.626667 0 -0 0</pose>
+          <pose>1.73199 0.917085 0.624993 -0 8e-06 -0.007163</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_metal_zinc'>
-        <pose>1.60632 0.906372 0.626667 0 -0 0</pose>
+        <pose>1.60633 0.906513 0.624993 -0.000125 2e-06 -0.010583</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.60632 0.906372 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.60633 0.906513 0.624993 -0.000125 2e-06 -0.010583</pose>
+          <velocity>4.4e-05 0.001879 -0.007132 -0.125251 0.002933 -5e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_papier_kraft_industriel'>
-        <pose>0.894041 1.36451 0.626667 0 -0 0</pose>
+        <pose>0.894053 1.36465 0.624993 -0.000125 2e-06 -0.010583</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.894041 1.36451 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.894053 1.36465 0.624993 -0.000125 2e-06 -0.010583</pose>
+          <velocity>4.4e-05 0.001879 -0.007132 -0.125251 0.002933 -5e-06</velocity>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_plastique_HDPE_industriel'>
-        <pose>0.279422 1.76628 0.626667 0 -0 0</pose>
+        <pose>0.279434 1.76642 0.624993 -0.000125 2e-06 -0.010583</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.279422 1.76628 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.279434 1.76642 0.624993 -0.000125 2e-06 -0.010583</pose>
+          <velocity>4.4e-05 0.001879 -0.007132 -0.125251 0.002933 -5e-06</velocity>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_plastique_PE_film'>
-        <pose>0.643957 0.738381 0.626667 0 -0 0</pose>
+        <pose>0.643956 0.738516 0.624997 0.000123 -1e-06 -0.010954</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.643957 0.738381 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.643956 0.738516 0.624997 0.000123 -1e-06 -0.010954</pose>
+          <velocity>-3.6e-05 -0.001844 -0.002677 0.122917 -0.002377 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_plastique_PP_industriel'>
-        <pose>1.09667 -0.105267 0.626667 0 -0 0</pose>
+        <pose>1.09667 -0.105132 0.624997 0.000123 -1e-06 -0.010954</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.09667 -0.105267 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.09667 -0.105132 0.624997 0.000123 -1e-06 -0.010954</pose>
+          <velocity>-3.6e-05 -0.001844 -0.002677 0.122917 -0.002377 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_industrielle_plastique_PVC_tuyau'>
-        <pose>0.714376 -0.624071 0.626667 0 -0 0</pose>
+        <pose>0.714425 -0.623985 0.624999 1.3e-05 3.5e-05 -0.004936</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.714376 -0.624071 0.626667 0 -0 0</pose>
+          <pose>0.714425 -0.623985 0.624999 1.3e-05 3.5e-05 -0.004936</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_bocal_verre_propre'>
-        <pose>2.14457 -1.02577 0.626667 0 -0 0.446366</pose>
+        <pose>2.14456 -1.02571 0.624992 7.9e-05 3e-06 0.442661</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.14457 -1.02577 0.626667 0 -0 0.446366</pose>
+          <pose>2.14456 -1.02571 0.624992 7.9e-05 3e-06 0.442661</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_boite_carton_propre'>
-        <pose>1.20987 -1.20053 0.626667 0 -0 0</pose>
+        <pose>1.20991 -1.20044 0.625 0 0 -0.00295</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.20987 -1.20053 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.20991 -1.20044 0.625 0 0 -0.00295</pose>
+          <velocity>-0.001743 7.6e-05 0.007889 -0.005059 -0.116206 4e-06</velocity>
+          <acceleration>-3.48636 0.15173 15.7771 2.44914 0.064885 0.001117</acceleration>
+          <wrench>-0.031133 0.001355 0.140889 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_boite_metal_propre'>
-        <pose>1.28406 -1.17953 0.626667 0 -0 0</pose>
+        <pose>1.28408 -1.17945 0.624993 -0.000125 2e-06 -0.005337</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.28406 -1.17953 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.28408 -1.17945 0.624993 -0.000125 2e-06 -0.005337</pose>
+          <velocity>3.4e-05 0.001879 -0.007132 -0.125248 0.002233 -5e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_bouteille_plastique_propre'>
-        <pose>2.09855 1.32493 0.626667 0 -0 0</pose>
+        <pose>2.09856 1.32494 0.625 0 -0 0.000658</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.09855 1.32493 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>2.09856 1.32494 0.625 0 -0 0.000658</pose>
+          <velocity>-0.001597 1.8e-05 0.003562 -0.001209 -0.10648 3e-06</velocity>
+          <acceleration>-3.19449 0.036255 7.12473 -2.41717 0.667912 0.003597</acceleration>
+          <wrench>-0.028527 0.000324 0.063624 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_bouteille_verre_huile'>
-        <pose>2.26081 1.417 0.626667 0 -0 0</pose>
+        <pose>2.26084 1.41711 0.624993 -0 8e-06 -0.007163</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.26081 1.417 0.626667 0 -0 0</pose>
+          <pose>2.26084 1.41711 0.624993 -0 8e-06 -0.007163</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_bouteille_verre_vin'>
-        <pose>1.67214 0.750406 0.626667 0 -0 0</pose>
+        <pose>1.67221 0.750506 0.625 0 0 -0.006763</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.67214 0.750406 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.67221 0.750506 0.625 0 0 -0.006763</pose>
+          <velocity>-0.001753 -0.000562 0.005816 0.037458 -0.116904 0</velocity>
+          <acceleration>-3.50712 -1.12375 11.6321 -0.481759 -1.33012 0</acceleration>
+          <wrench>-0.031319 -0.010035 0.103875 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_canette_alu_propre'>
-        <pose>1.67563 0.975099 0.626667 0 -0 0</pose>
+        <pose>1.6757 0.975199 0.625 0 0 -0.006763</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.67563 0.975099 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.6757 0.975199 0.625 0 0 -0.006763</pose>
+          <velocity>-0.001753 -0.000562 0.005816 0.037458 -0.116904 0</velocity>
+          <acceleration>-3.50712 -1.12374 11.6321 -0.482076 -1.33018 0</acceleration>
+          <wrench>-0.031319 -0.010035 0.103875 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_carton_lait_propre'>
-        <pose>0.979323 1.32553 0.626667 0 -0 0</pose>
+        <pose>0.979324 1.32557 0.624999 0 -1.9e-05 -0.004082</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.979323 1.32553 0.626667 0 -0 0</pose>
+          <pose>0.979324 1.32557 0.624999 0 -1.9e-05 -0.004082</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_chaussure_cuir'>
-        <pose>0.229521 1.57131 0.626667 0 -0 0</pose>
+        <pose>0.229522 1.57135 0.624999 0 -1.9e-05 -0.004082</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.229521 1.57131 0.626667 0 -0 0</pose>
+          <pose>0.229522 1.57135 0.624999 0 -1.9e-05 -0.004082</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_journal_propre'>
-        <pose>0.723752 0.610374 0.626667 0 -0 0</pose>
+        <pose>0.723765 0.610516 0.624997 0.000123 -1e-06 -0.009848</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.723752 0.610374 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.723765 0.610516 0.624997 0.000123 -1e-06 -0.009848</pose>
+          <velocity>-3.3e-05 -0.001844 -0.002676 0.122917 -0.002232 -2e-06</velocity>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_livre_papier'>
-        <pose>1.12783 -0.067551 0.626667 0 -0 0</pose>
+        <pose>1.12784 -0.067409 0.624997 0.000123 -1e-06 -0.009848</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.12783 -0.067551 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>1.12784 -0.067409 0.624997 0.000123 -1e-06 -0.009848</pose>
+          <velocity>-3.3e-05 -0.001844 -0.002676 0.122917 -0.002232 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <model name='recyclables_residentielle_magazine_propre'>
-        <pose>0.721629 -0.70895 0.626667 0 -0 0</pose>
+        <pose>0.721596 -0.708836 0.624997 0.000123 -1e-06 -0.009256</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.721629 -0.70895 0.626667 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <pose>0.721596 -0.708836 0.624997 0.000123 -1e-06 -0.009256</pose>
+          <velocity>-3.2e-05 -0.001844 -0.002676 0.122916 -0.002154 -2e-06</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.087514 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -1896,7 +2022,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>1.23059 -0.890735 2.47354 0 0.730796 1.608</pose>
+        <pose>7.00783 -13.9475 5.31587 -0 0.201203 1.87918</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1995,8 +2121,20 @@
       <allow_auto_disable>1</allow_auto_disable>
     </model>
     <model name='menagers_commerciale_barquette_salade'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2038,8 +2176,20 @@
       <pose>-0.385423 -4.68811 0 0 -0 0</pose>
     </model>
     <model name='menagers_commerciale_boite_pizza'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2081,8 +2231,20 @@
       <pose>2.36937 -3.55118 0 0 -0 0</pose>
     </model>
     <model name='menagers_residentielle_barquette_viande'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2124,8 +2286,20 @@
       <pose>2.39862 -3.57271 0 0 -0 0</pose>
     </model>
     <model name='menagers_residentielle_boite_cereales'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2167,8 +2341,20 @@
       <pose>0.265958 -4.23433 0 0 -0 0</pose>
     </model>
     <model name='menagers_industrielle_bidon_eau_5L'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2210,8 +2396,20 @@
       <pose>-0.538032 -4.31569 0 0 -0 0</pose>
     </model>
     <model name='recyclables_commerciale_bouteille_eau_propre'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2253,8 +2451,20 @@
       <pose>1.55394 -3.79417 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_aluminium_industriel'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2296,8 +2506,20 @@
       <pose>0.357145 -3.62372 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_bocal_verre_propre'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2339,8 +2561,20 @@
       <pose>0.409278 -3.71392 0 0 -0 0</pose>
     </model>
     <model name='dangereux_commerciale_batterie_ordinateur'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2382,8 +2616,20 @@
       <pose>0.467317 -3.71253 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_amiante_plaque'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2428,7 +2674,7 @@
       <pose>6.17795 -1.07917 0.345 0 -0 0</pose>
       <model name='pancarte'>
         <static>1</static>
-        <link name='link'>
+        <link name='pancarte_qr_code_zone1Tampouy_link'>
           <collision name='collision'>
             <pose>0 0.075 0 0 -0 0</pose>
             <geometry>
@@ -2518,8 +2764,20 @@
       <allow_auto_disable>1</allow_auto_disable>
     </model>
     <model name='menagers_commerciale_bouteille_jus'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2561,8 +2819,20 @@
       <pose>2.25574 -3.57742 0 0 -0 0</pose>
     </model>
     <model name='menagers_industrielle_bidon_huile_moteur'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2604,8 +2874,20 @@
       <pose>2.13198 -3.58164 0 0 -0 0</pose>
     </model>
     <model name='menagers_industrielle_big_bag_vide'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2647,8 +2929,20 @@
       <pose>2.11333 -3.5089 0 0 -0 0</pose>
     </model>
     <model name='menagers_commerciale_bouteille_smoothie'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2690,8 +2984,20 @@
       <pose>2.18404 -3.52613 0 0 -0 0</pose>
     </model>
     <model name='menagers_residentielle_boite_conserve_tomate'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2733,8 +3039,20 @@
       <pose>2.04429 -3.49994 0 0 -0 0</pose>
     </model>
     <model name='menagers_residentielle_bouteille_huile'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2776,8 +3094,20 @@
       <pose>2.03769 -3.5478 0 0 -0 0</pose>
     </model>
     <model name='recyclables_commerciale_bouteille_verre_biere'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2819,8 +3149,20 @@
       <pose>2.07015 -3.59104 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_bronze_industriel'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2862,8 +3204,20 @@
       <pose>2.07113 -3.65005 0 0 -0 0</pose>
     </model>
     <model name='dangereux_commerciale_batterie_ups'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -2905,8 +3259,20 @@
       <pose>2.04141 -3.44512 0 0 -0 0</pose>
     </model>
     <model name='dangereux_residentielle_aerosol_vide'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -3692,8 +4058,20 @@
       <allow_auto_disable>1</allow_auto_disable>
     </model>
     <model name='menagers_commerciale_canette_cafe'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -3735,8 +4113,20 @@
       <pose>1.86621 -3.48791 0 0 -0 0</pose>
     </model>
     <model name='menagers_commerciale_canette_the'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -3778,8 +4168,20 @@
       <pose>1.8509 -3.55852 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_carton_ondule_industriel'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -3821,8 +4223,20 @@
       <pose>1.78374 -3.45863 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_carton_compacte'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -3864,8 +4278,20 @@
       <pose>1.7809 -3.50123 0 0 -0 0</pose>
     </model>
     <model name='recyclables_commerciale_canette_boisson_propre'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -3907,8 +4333,20 @@
       <pose>1.73715 -3.45655 0 0 -0 0</pose>
     </model>
     <model name='recyclables_commerciale_carton_emballage'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -3950,8 +4388,20 @@
       <pose>1.73707 -3.49838 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_boite_carton_propre'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -3993,8 +4443,20 @@
       <pose>1.71691 -3.39543 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_boite_metal_propre'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4036,8 +4498,20 @@
       <pose>1.75967 -3.41011 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_chrome_hexavalent'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4079,8 +4553,20 @@
       <pose>1.8934 -3.54959 0 0 -0 0</pose>
     </model>
     <model name='dangereux_residentielle_ampoule_led_cassee'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4122,8 +4608,20 @@
       <pose>1.92061 -3.50045 0 0 -0 0</pose>
     </model>
     <model name='menagers_industrielle_caisse_plastique'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4165,8 +4663,20 @@
       <pose>1.15827 -3.39723 0 0 -0 0</pose>
     </model>
     <model name='menagers_residentielle_bouteille_lait'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4208,8 +4718,20 @@
       <pose>1.20631 -3.39812 0 0 -0 0</pose>
     </model>
     <model name='recyclables_commerciale_metal_conserve_grande'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4251,8 +4773,20 @@
       <pose>1.20094 -3.44337 0 0 -0 0</pose>
     </model>
     <model name='recyclables_commerciale_papier_bureau_blanc'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4294,8 +4828,20 @@
       <pose>1.1517 -3.45185 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_cuivre_fil'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4337,8 +4883,20 @@
       <pose>1.19941 -3.49856 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_ferraille_acier'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4380,8 +4938,20 @@
       <pose>1.15355 -3.49483 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_bouteille_plastique_propre'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4423,8 +4993,20 @@
       <pose>1.17698 -3.26758 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_bouteille_verre_huile'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4466,8 +5048,20 @@
       <pose>1.1524 -3.53616 0 0 -0 0</pose>
     </model>
     <model name='dangereux_commerciale_batterie_vehicule_12V'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4509,8 +5103,20 @@
       <pose>1.2084 -3.54497 0 0 -0 0</pose>
     </model>
     <model name='dangereux_residentielle_batterie_telephone'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4552,8 +5158,20 @@
       <pose>1.16005 -3.58245 0 0 -0 0</pose>
     </model>
     <model name='menagers_commerciale_emballage_croissant'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4595,8 +5213,20 @@
       <pose>0.934417 -3.45241 0 0 -0 0</pose>
     </model>
     <model name='menagers_industrielle_feuillard_acier'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4638,8 +5268,20 @@
       <pose>0.958142 -3.30255 0 0 -0 0</pose>
     </model>
     <model name='menagers_industrielle_film_plastique_palette'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4681,8 +5323,20 @@
       <pose>0.935524 -3.49642 0 0 -0 0</pose>
     </model>
     <model name='recyclables_commerciale_papier_journal_commercial'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4724,8 +5378,20 @@
       <pose>0.927299 -3.55236 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_metal_inox'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4767,8 +5433,20 @@
       <pose>0.925989 -3.59629 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_metal_zinc'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4810,8 +5488,20 @@
       <pose>0.915806 -3.63709 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_bouteille_verre_vin'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4853,8 +5543,20 @@
       <pose>0.912365 -3.68139 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_canette_alu_propre'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4896,8 +5598,20 @@
       <pose>0.89959 -3.72222 0 0 -0 0</pose>
     </model>
     <model name='dangereux_residentielle_chargeur_telephone'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4939,8 +5653,20 @@
       <pose>0.891882 -3.45345 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_cyanure_industriel'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -4982,8 +5708,20 @@
       <pose>0.892554 -3.49768 0 0 -0 0</pose>
     </model>
     <model name='menagers_commerciale_emballage_sandwich'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5025,8 +5763,20 @@
       <pose>0.922314 -3.26659 0 0 -0 0</pose>
     </model>
     <model name='menagers_commerciale_gobelet_distributeur'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5068,8 +5818,20 @@
       <pose>0.924513 -3.31185 0 0 -0 0</pose>
     </model>
     <model name='menagers_industrielle_fût_metal_200L'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5111,8 +5873,20 @@
       <pose>0.935663 -3.36436 0 0 -0 0</pose>
     </model>
     <model name='menagers_industrielle_jerrycan_20L'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5154,8 +5928,20 @@
       <pose>0.943301 -3.40685 0 0 -0 0</pose>
     </model>
     <model name='menagers_residentielle_canette_soda'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5197,8 +5983,20 @@
       <pose>0.980873 -3.32588 0 0 -0 0</pose>
     </model>
     <model name='menagers_residentielle_bouteille_plastique_eau'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5240,8 +6038,20 @@
       <pose>0.977517 -3.2817 0 0 -0 0</pose>
     </model>
     <model name='recyclables_commerciale_plastique_rigide_propre'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5283,8 +6093,20 @@
       <pose>0.858803 -3.24237 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_papier_kraft_industriel'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5326,8 +6148,20 @@
       <pose>0.857078 -3.28307 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_carton_lait_propre'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5369,8 +6203,20 @@
       <pose>0.866846 -3.32948 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_dechet_chimique_fût'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5412,8 +6258,20 @@
       <pose>0.869863 -3.37095 0 0 -0 0</pose>
     </model>
     <model name='menagers_commerciale_gobelet_glace'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5455,8 +6313,20 @@
       <pose>0.568272 4.11145 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_chaussure_cuir'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5498,8 +6368,20 @@
       <pose>0.567213 4.06231 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_plastique_HDPE_industriel'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5541,8 +6423,20 @@
       <pose>0.56362 4.01424 0 0 -0 0</pose>
     </model>
     <model name='dangereux_commerciale_cartouche_imprimante'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5584,8 +6478,20 @@
       <pose>0.560847 3.96167 0 0 -0 0</pose>
     </model>
     <model name='dangereux_commerciale_cartouche_toner'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5627,8 +6533,20 @@
       <pose>0.558405 3.91057 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_dechet_medical_hopital'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5670,8 +6588,20 @@
       <pose>0.51964 4.11233 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_dechet_pharmaceutique'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5713,8 +6643,20 @@
       <pose>0.516579 4.07583 0 0 -0 0</pose>
     </model>
     <model name='dangereux_residentielle_dechets_electronique'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5756,8 +6698,20 @@
       <pose>0.508263 4.02125 0 0 -0 0</pose>
     </model>
     <model name='dangereux_residentielle_huile_vidange'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5799,8 +6753,20 @@
       <pose>0.509508 3.97669 0 0 -0 0</pose>
     </model>
     <model name='dangereux_residentielle_insecticide_aerosol'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5842,8 +6808,20 @@
       <pose>0.506861 3.92847 0 0 -0 0</pose>
     </model>
     <model name='dangereux_commerciale_condensateur_pcb'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5885,8 +6863,20 @@
       <pose>1.41759 3.80639 0 0 -0 0</pose>
     </model>
     <model name='dangereux_commerciale_disque_dur_defaillant'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5928,8 +6918,20 @@
       <pose>1.41524 3.76342 0 0 -0 0</pose>
     </model>
     <model name='dangereux_commerciale_ecran_lcd_casse'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -5971,8 +6973,20 @@
       <pose>1.41404 3.72603 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_dechet_radioactif_faible'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6014,8 +7028,20 @@
       <pose>1.38076 3.80725 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_formaldehyde_industriel'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6057,8 +7083,20 @@
       <pose>1.37722 3.76699 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_mercure_industriel'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6100,8 +7138,20 @@
       <pose>1.37101 3.73055 0 0 -0 0</pose>
     </model>
     <model name='dangereux_residentielle_medicament_expire'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6143,8 +7193,20 @@
       <pose>1.36418 3.68571 0 0 -0 0</pose>
     </model>
     <model name='recyclables_commerciale_plastique_transparent'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6186,8 +7248,20 @@
       <pose>1.40716 3.68191 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_plastique_PE_film'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6229,8 +7303,20 @@
       <pose>1.40834 3.64134 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_journal_propre'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6272,8 +7358,20 @@
       <pose>1.35965 3.64606 0 0 -0 0</pose>
     </model>
     <model name='menagers_industrielle_palette_bois_cassee'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6315,8 +7413,20 @@
       <pose>0.796369 3.75942 0 0 -0 0</pose>
     </model>
     <model name='recyclables_commerciale_verre_bocal_1L'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6358,8 +7468,20 @@
       <pose>0.788224 3.71209 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_plastique_PP_industriel'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6401,8 +7523,20 @@
       <pose>0.794449 3.66927 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_livre_papier'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6444,8 +7578,20 @@
       <pose>0.790848 3.63128 0 0 -0 0</pose>
     </model>
     <model name='dangereux_commerciale_huile_hydraulique'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6487,8 +7633,20 @@
       <pose>0.799137 3.7952 0 0 -0 0</pose>
     </model>
     <model name='dangereux_commerciale_liquide_frein'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6530,8 +7688,20 @@
       <pose>0.839288 3.79072 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_pcb_transformateur'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6573,8 +7743,20 @@
       <pose>0.84157 3.74827 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_pesticide_industriel'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6616,8 +7798,20 @@
       <pose>0.840261 3.702 0 0 -0 0</pose>
     </model>
     <model name='dangereux_residentielle_peinture_pot_vide'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6659,8 +7853,20 @@
       <pose>0.842531 3.65002 0 0 -0 0</pose>
     </model>
     <model name='dangereux_residentielle_pile_alcaline'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6702,8 +7908,20 @@
       <pose>0.832198 3.61359 0 0 -0 0</pose>
     </model>
     <model name='menagers_commerciale_pot_sauce'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6745,8 +7963,20 @@
       <pose>1.12377 -3.30301 0 0 -0 0</pose>
     </model>
     <model name='menagers_industrielle_rouleau_carton'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6788,8 +8018,20 @@
       <pose>1.12586 -3.37135 0 0 -0 0</pose>
     </model>
     <model name='menagers_residentielle_emballage_biscuit'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6831,8 +8073,20 @@
       <pose>1.12545 -3.41945 0 0 -0 0</pose>
     </model>
     <model name='recyclables_commerciale_verre_restaurant'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6874,8 +8128,20 @@
       <pose>1.12044 -3.48318 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_carton_ondule_industriel_0'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6917,8 +8183,20 @@
       <pose>1.06273 -3.482 0 0 -0 0</pose>
     </model>
     <model name='recyclables_industrielle_plastique_PVC_tuyau'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -6960,8 +8238,20 @@
       <pose>1.06001 -3.43889 0 0 -0 0</pose>
     </model>
     <model name='recyclables_residentielle_magazine_propre'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -7003,8 +8293,20 @@
       <pose>1.06941 -3.39272 0 0 -0 0</pose>
     </model>
     <model name='dangereux_commerciale_liquide_refroidissement'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -7046,8 +8348,20 @@
       <pose>1.07554 -3.35308 0 0 -0 0</pose>
     </model>
     <model name='dangereux_industrielle_plomb_batterie_industriel'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -7089,8 +8403,20 @@
       <pose>1.07196 -3.31338 0 0 -0 0</pose>
     </model>
     <model name='dangereux_residentielle_pile_bouton'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
+        <inertial>
+          <mass>0.00893</mass>
+          <inertia>
+            <ixx>4.47e-06</ixx>
+            <iyy>4.47e-06</iyy>
+            <izz>4.47e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
         <visual name='cube_visual'>
           <geometry>
             <box>
@@ -7442,6 +8768,397 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+    </model>
+    <model name='logotrc2'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>6.25 0 6.25</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc2/materials/scripts/</uri>
+              <uri>model://logotrc2/materials/textures/</uri>
+              <name>logotrc2/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.94014 5.2168 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.99689 -4.0308 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc_0'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.577263 -3.13817 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc_1'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.0759 -3.35575 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc3'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.15433 0 0.611017</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc3/materials/scripts/</uri>
+              <uri>model://logotrc3/materials/textures/</uri>
+              <name>logotrc3/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>2.53678 -3.13811 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc_2'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-3.68231 3.36666 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc_3'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.597045 3.15863 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc_4'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.11516 3.18643 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc3_0'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.15433 0 0.611017</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc3/materials/scripts/</uri>
+              <uri>model://logotrc3/materials/textures/</uri>
+              <name>logotrc3/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-2.49149 3.47332 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc_5'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>3.8694 -3.12606 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc_6'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-4.35699 -0.342671 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc_7'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-4.61434 0.896554 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc3_1'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.15433 0 0.611017</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc3/materials/scripts/</uri>
+              <uri>model://logotrc3/materials/textures/</uri>
+              <name>logotrc3/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-3.72805 2.40962 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc_8'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>4.5419 2.91465 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc_9'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>3.85642 -0.301343 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc_10'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.7021 0 0.60443</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc/materials/scripts/</uri>
+              <uri>model://logotrc/materials/textures/</uri>
+              <name>logotrc/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>4.50495 -1.63442 0 0 -0 0</pose>
+    </model>
+    <model name='logotrc3_2'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='cube_visual'>
+          <geometry>
+            <box>
+              <size>1.15433 0 0.611017</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://logotrc3/materials/scripts/</uri>
+              <uri>model://logotrc3/materials/textures/</uri>
+              <name>logotrc3/FaceMaterial</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>4.59351 -2.81698 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
