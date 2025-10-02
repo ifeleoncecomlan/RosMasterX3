@@ -6,7 +6,7 @@ Clone the repository and compile the contained packages using the configure scri
 This will create and build a workspace `trc_ws` and move to it root (it also manages sourcing).
 
 ```bash
-cd tekbot_sim
+cd 2025-ROS-Ressources
 source configure.sh
 ```
 
