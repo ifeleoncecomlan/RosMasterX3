@@ -13,7 +13,12 @@ source configure.sh
 Run `sim_trc` (the TRC 2025 arena and the rosmaster X3 under Gazebo):
 
 ```bash
-ros2 launch sim_trc sim_trc.launch.py
+#IF YOU DON'T HAVE A GPU
+ros2 launch sim_trc sim_trc_no_gpu.launch.py 
+
+#IF YOU HAVE A GPU
+#ros2 launch sim_trc sim_trc.launch.py
 ```
+After running `sim_trc` you can control the rosmaster X3 with a joystick
 
 ![sim_trc](./assets/sim_trc_2025.png)

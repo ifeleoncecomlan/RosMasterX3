@@ -12,6 +12,7 @@ if [ -d "$BIN_FOLDER" ]; then
     rm -rf "$BIN_FOLDER"
 fi
 
+sudo apt install ros-humble-image-publisher
 source /opt/ros/humble/setup.bash
 colcon build --packages-select astra_camera astra_camera_msgs rplidar_ros --cmake-args -DCMAKE_CXX_FLAGS="-w" -Wno-dev
 colcon build
