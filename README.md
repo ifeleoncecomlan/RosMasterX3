@@ -17,7 +17,7 @@ Run `sim_trc` (the TRC 2025 arena and the rosmaster X3 under Gazebo):
 ros2 launch sim_trc sim_trc_no_gpu.launch.py 
 
 #IF YOU HAVE A GPU
-#ros2 launch sim_trc sim_trc.launch.py
+ros2 launch sim_trc sim_trc.launch.py
 ```
 After running `sim_trc` you can control the rosmaster X3 with a joystick
 
